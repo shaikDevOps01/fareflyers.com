@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Lounge Access Cards - FareFlyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Separate CSS for cards page -->
+    <link rel="stylesheet" href="cards-style.css">
+    
+    <!-- Shared Google Sheets loader -->
+    <script src="cards-data.js"></script>
+</head>
+<body>
+
+<!-- Header with Logo + Text -->
+<header>
+    <div class="header-container">
+        <a href="../index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+            <img src="../logo.png" alt="FareFlyers" style="height: 50px; width: auto;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--white);">
+            </span>
+        </a>
+        <nav>
+            <a href="../index.html">← Back to Home</a>
+        </nav>
+    </div>
+</header>
+<!-- Main Content -->
+<main>
+    <div class="cards-container">
+        <div class="cards-header">
+            <span class="tag">✧ Complete List</span>
+            <h1>50+ Credit Cards with <span class="gold">Free Lounge Access</span></h1>
+            <p>All cards listed are Lifetime Free (₹0 annual fee) or have easy waiver conditions</p>
+        </div>
+        
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterCards('all')">All Cards</button>
+            <button class="filter-btn" onclick="filterCards('lifetime-free')">Lifetime Free</button>
+            <button class="filter-btn" onclick="filterCards('unlimited')">Unlimited Access</button>
+            <button class="filter-btn" onclick="filterCards('international')">International Lounge</button>
+        </div>
+        
+        <!-- Cards Grid -->
+        <div class="cards-grid" id="cardsGrid">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading 50+ cards...</p>
+            </div>
+        </div>
+        
+        <!-- Footer Note -->
+        <div class="cards-footer">
+            <p>📌 Terms apply. Lounge access subject to bank policies. Always check with your bank before traveling.</p>
+            <p>💡 Missing a card? <a href="mailto:support@fareflyers.com">Email us</a> and we'll add it within 48 hours.</p>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <p>© 2026 FareFlyers. All rights reserved.</p>
+        <p>We are an affiliate partner. We may earn commission when you apply through our links.</p>
+    </div>
+</footer>
+
+<script src="cards-script.js"></script>
+</body>
+</html>
