@@ -657,6 +657,19 @@ const LOUNGE_CARDS_DATABASE = [
         network: "RuPay",
         loungeAccess: true,
         cardType: "debit"
+    },
+    {
+        name: "shaiki credit card",
+        bank: "SNB",
+        variant: "Credit Card",
+        domesticVisits: "2",
+        domesticPerQuarter: "2",
+        domesticSpend: null,
+        internationalVisits: "0",
+        internationalSpend: null,
+        network: "RuPay",
+        loungeAccess: true,
+        cardType: "credit"
     }
 ];
 

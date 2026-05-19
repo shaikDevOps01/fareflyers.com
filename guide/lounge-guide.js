@@ -207,16 +207,19 @@ function initMobileMenu() {
     });
 }
 
-// Logo Click
-function initLogoClick() {
-    const logo = document.getElementById('logoClick');
-    if (logo) {
-        logo.addEventListener('click', function() {
-            window.location.href = 'index.html';
+// ============================================================
+// LOGO CLICK - SCROLL TO TOP
+// ============================================================
+const logoElement = document.getElementById('logoClick');
+if (logoElement) {
+    logoElement.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    }
+    });
 }
-
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     renderCreditCards();

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Lounge Access Cards — FareFlyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="free-cards.css">
+</head>
+<body>
+
+    <div class="announcement-bar">
+    <span class="scrolling-text">
+        ✨ We're working hard on our flight search section! Thank you for your support ✨ &nbsp;·&nbsp; Domestic India flights launching soon &nbsp;·&nbsp; 🇮🇳 &nbsp;&nbsp;&nbsp;
+    </span>
+</div>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-inner">
+            <img src="logo.png" alt="FareFlyers" class="logo-img-header" id="logoClick">
+            <nav class="header-nav nav-desktop">
+                <a href="/guide/lounge-guide.html" class="nav-link " target="_blank" rel="noopener noreferrer">Complete Lounge Access Guide</a>  
+                <a href="/index.html#roadmap" class="nav-link">About Us</a>
+            </nav>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <div class="social-row nav-desktop">
+                    <a href="https://x.com/fareflyers" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.631z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/fareflyers/" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/fareflyers" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:contact@fareflyers.com" class="social-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+                <a href="/index.html#signup" class="btn-header">Join Early Access</a>
+                <button class="hamburger" id="ham">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        
+        <!-- Page Hero -->
+        <div class="page-hero">
+            <span class="trust-badge">💰 Complete List</span>
+            <h1>Credit Cards with <span>Free Lounge Access</span></h1>
+            <p class="sub">All cards listed are Lifetime Free (₹0 annual fee) or have easy waiver conditions</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Cards</button>
+            <button class="filter-btn" data-filter="ltf">Lifetime Free</button>
+            <button class="filter-btn" data-filter="unlimited">Unlimited Access</button>
+            <button class="filter-btn" data-filter="forex">Best Forex</button>
+            <button class="filter-btn" data-filter="international">International Lounge</button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="cards-grid" id="cardsGrid"></div>
+
+        <!-- Info Banner -->
+        <div class="info-banner">
+            <p>📖 Need complete lounge access details? <a href="/guide/lounge-guide.html" target="_blank" rel="noopener noreferrer">View Full Guide →</a></p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html#how-it-works">How It Works</a>
+                    <a href="index.html#lounge">Lounge Access</a>
+                    <a href="about.html">About Us</a>
+                    <a href="mailto:contact@fareflyers.com">Contact</a>
+                </div>
+                <div class="footer-note">
+                    📌 Terms apply. Lounge access subject to bank policies. Always check with your bank before traveling.
+                </div>
+                <div class="footer-note">
+                    💡 Missing a card? <a href="mailto:contact@fareflyers.com" style="color: var(--gold);">Email us</a> and we'll add it within 48 hours.
+                </div>
+                <div class="copyright">
+                    © 2026 FareFlyers. All rights reserved.
+                </div>
+                <div class="affiliate-disclosure">
+                    We are an affiliate partner. We may earn commission when you apply through our links.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="free-cards.js"></script>
+</body>
+</html>
