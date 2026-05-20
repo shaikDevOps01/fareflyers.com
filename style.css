@@ -1066,3 +1066,447 @@ footer {
     width: 32px;
     height: 32px;
 }
+/* ============================================================ */
+/* MOBILE RESPONSIVE - ADD THIS AT THE BOTTOM OF YOUR CSS
+/* ============================================================ */
+
+/* Tablet & Mobile (up to 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+    /* Typography - Clean & Readable */
+    body {
+        font-size: 15px;
+    }
+    
+    h1 {
+        font-size: 32px !important;
+    }
+    
+    h2 {
+        font-size: 24px !important;
+    }
+    
+    .section-head h2 {
+        font-size: 22px !important;
+    }
+    
+    .search-title {
+        font-size: 20px;
+    }
+    
+    /* Header - Clean Mobile Layout */
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .logo-img-header {
+        height: 45px;
+    }
+    
+    .hamburger {
+        display: flex !important;
+        order: 3;
+    }
+    
+    .social-row {
+        order: 2;
+    }
+    
+    .btn-header {
+        order: 1;
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    
+    /* Mobile Navigation */
+    .header-nav {
+        display: none;
+        width: 100%;
+        order: 4;
+    }
+    
+    .header-nav.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(7, 13, 26, 0.98);
+        backdrop-filter: blur(18px);
+        padding: 20px;
+        gap: 12px;
+        z-index: 999;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .header-nav.active a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 40px 0 !important;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-sub {
+        max-width: 100%;
+        font-size: 15px;
+    }
+    
+    .stats-row {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .btn-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        padding: 12px 20px;
+    }
+    
+    /* Slideshow */
+    .slide-wrapper {
+        min-height: 380px;
+    }
+    
+    .slide {
+        padding: 20px;
+    }
+    
+    .preview-row {
+        font-size: 12px;
+        padding: 8px 0;
+    }
+    
+    /* Search Section */
+    .search-section {
+        padding: 30px 0;
+    }
+    
+    .search-box {
+        padding: 20px;
+    }
+    
+    .search-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .search-sub {
+        font-size: 13px;
+    }
+    
+    /* Popular Routes - Clean Pill Boxes */
+    .dest-grid {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .dest-card {
+        padding: 5px 12px;
+    }
+    
+    .dest-from, .dest-to {
+        font-size: 11px;
+    }
+    
+    /* Compare Section */
+    .compare-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .group-header {
+        gap: 8px;
+    }
+    
+    .chip {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+    
+    /* Mission Section */
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .mission-text {
+        text-align: center;
+    }
+    
+    .mission-text h2 {
+        text-align: center;
+    }
+    
+    .mission-highlight {
+        text-align: left;
+    }
+    
+    .mission-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .stat-number {
+        font-size: 32px;
+    }
+    
+    /* Trust Section */
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .trust-card {
+        padding: 24px 20px;
+    }
+    
+    /* What We Provide */
+    .provide-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .provide-card {
+        padding: 20px;
+    }
+    
+    /* Lounge Search */
+    .lounge-search-box {
+        padding: 20px;
+    }
+    
+    .lounge-search-input {
+        font-size: 13px;
+        padding: 12px 40px 12px 45px;
+    }
+    
+    .lounge-check-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .access-details-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .access-detail-item .detail-value {
+        font-size: 20px;
+    }
+    
+    .quick-examples {
+        gap: 8px;
+    }
+    
+    .quick-chip {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+    
+    /* Result Section */
+    .result-section {
+        padding: 40px 0;
+    }
+    
+    .result-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .result-card {
+        padding: 20px;
+    }
+    
+    .rc-value {
+        font-size: 28px;
+    }
+    
+    .breakdown-card {
+        padding: 20px;
+    }
+    
+    /* Signup Section */
+    .signup-box {
+        padding: 28px 20px;
+    }
+    
+    .signup-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .signup-submit {
+        width: 100%;
+    }
+    
+    /* Roadmap */
+    .roadmap-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .roadmap-card {
+        padding: 20px;
+    }
+    
+    /* Footer */
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .view-all-link {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px !important;
+    }
+    
+    .tag {
+        font-size: 9px;
+        padding: 4px 12px;
+    }
+    
+    .hero {
+        padding: 30px 0 !important;
+    }
+    
+    .hero-sub {
+        font-size: 14px;
+    }
+    
+    .stats-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .mission-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-box {
+        padding: 16px;
+    }
+    
+    .search-title {
+        font-size: 18px;
+    }
+    
+    .dest-card {
+        padding: 4px 10px;
+    }
+    
+    .dest-from, .dest-to {
+        font-size: 10px;
+    }
+    
+    .card-title-section h3 {
+        font-size: 16px;
+    }
+    
+    .winner-chip {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .toast {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+        font-size: 12px;
+    }
+}
+
+/* Fix scroll position for mobile */
+@media (max-width: 768px) {
+    #search { scroll-margin-top: 80px; }
+    #how-it-works { scroll-margin-top: 70px; }
+    #lounge { scroll-margin-top: 70px; }
+    #roadmap { scroll-margin-top: 70px; }
+    #signup { scroll-margin-top: 70px; }
+}
+
+/* Fix for Cards Grid on Mobile */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    
+    .card-offer {
+        padding: 16px !important;
+    }
+    
+    .card-footer {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .apply-btn {
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
+
+/* Disable fade-in animations on mobile for better performance */
+@media (max-width: 768px) {
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

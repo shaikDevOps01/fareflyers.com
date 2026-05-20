@@ -2,21 +2,8 @@
 /* FREE CARDS PAGE - COMPLETE STYLES
 /* ============================================================ */
 
-
 /* Font imports */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-}
-
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
 
 * {
     margin: 0;
@@ -111,13 +98,13 @@ header {
 }
 
 .logo-img-header {
-  height: 60px; width: auto;
-  filter: drop-shadow(0 0 6px rgba(200,168,75,0.25));
-  transition: filter 0.3s, transform 0.2s;
+    height: 55px;
+    width: auto;
+    filter: drop-shadow(0 0 6px rgba(200,168,75,0.25));
+    transition: filter 0.3s, transform 0.2s;
+    cursor: pointer;
 }
-.logo-img-header {
-    margin-left: 40px;  /* This will push logo to the right */
-}
+
 .header-nav {
     display: flex;
     align-items: center;
@@ -504,7 +491,7 @@ footer {
 }
 
 /* ============================================================ */
-/* RESPONSIVE
+/* RESPONSIVE - YOUR EXISTING MEDIA QUERIES
 /* ============================================================ */
 @media (max-width: 768px) {
     .header-nav {
@@ -540,4 +527,163 @@ footer {
     .container {
         padding: 0 16px;
     }
+}
+
+/* ============================================================ */
+/* ADDITIONAL MOBILE RESPONSIVE FIXES - ADDED
+/* ============================================================ */
+
+/* Better header layout on mobile */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .logo-img-header {
+        height: 45px;
+        margin-left: 0 !important;
+    }
+    
+    .social-row {
+        order: 2;
+    }
+    
+    .btn-header {
+        order: 1;
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    
+    .hamburger {
+        order: 3;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mobile Navigation Active State */
+    .header-nav {
+        display: none;
+        width: 100%;
+        order: 4;
+    }
+    
+    .header-nav.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(7, 13, 26, 0.98);
+        backdrop-filter: blur(18px);
+        padding: 20px;
+        gap: 12px;
+        z-index: 999;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .header-nav.active a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 30px 0 20px;
+    }
+    
+    .page-hero h1 {
+        font-size: 28px !important;
+    }
+    
+    .trust-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+    
+    .filter-bar {
+        gap: 6px;
+    }
+    
+    .filter-btn {
+        padding: 5px 12px;
+        font-size: 10px;
+    }
+    
+    .card-offer {
+        padding: 14px;
+    }
+    
+    .card-header {
+        gap: 10px;
+    }
+    
+    .card-bank-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .benefit-value {
+        font-size: 14px;
+    }
+    
+    .card-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .apply-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .info-banner {
+        padding: 20px;
+        margin: 30px 0 20px;
+    }
+    
+    .footer-links {
+        gap: 16px;
+    }
+    
+    .footer-links a {
+        font-size: 11px;
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Disable fade-in animations on mobile for better performance */
+@media (max-width: 768px) {
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Fix scroll position for mobile */
+@media (max-width: 768px) {
+    #search { scroll-margin-top: 80px; }
+    #how-it-works { scroll-margin-top: 70px; }
+    #lounge { scroll-margin-top: 70px; }
 }
