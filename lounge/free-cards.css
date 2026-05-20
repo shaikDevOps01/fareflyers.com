@@ -687,3 +687,56 @@ footer {
     #how-it-works { scroll-margin-top: 70px; }
     #lounge { scroll-margin-top: 70px; }
 }
+/* ============================================================ */
+/* CARD IMAGE STYLES - ADD THIS TO BOTTOM OF free-cards.css
+/* ============================================================ */
+
+.card-image-section {
+    margin: 16px 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.card-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.bank-logo-emoji {
+    font-size: 32px;
+}
+
+.card-note {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 11px;
+    color: var(--silver);
+    text-align: center;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .card-image-section {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .card-img {
+        border-radius: 8px;
+    }
+    
+    .card-note {
+        font-size: 10px;
+    }
+}

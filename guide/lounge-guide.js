@@ -152,33 +152,401 @@ function renderSummary() {
     if (!container) return;
     
     container.innerHTML = `
+        <!-- ============================================================ -->
+        <!-- TOP 10 CARDS — HIGHEST LOUNGE BENEFITS -->
+        <!-- ============================================================ -->
         <div class="summary-card">
-            <div class="summary-card-header"><span class="icon">🏆</span><h3>Top Cards — Highest Lounge Benefits</h3></div>
+            <div class="summary-card-header">
+                <span class="icon">🏆</span>
+                <h3>Top 10 Cards — Highest Lounge Benefits</h3>
+                <div class="sub">Ranked by total access, network quality &amp; conditions</div>
+            </div>
             <div class="summary-card-body">
-                <div class="summary-item"><div class="summary-rank">1</div><div class="summary-content"><div class="summary-title">HDFC Infinia Metal</div><div class="summary-detail">Unlimited domestic + international. No spend criteria.</div><div class="summary-highlight">₹12,500/yr · Invite-only</div></div></div>
-                <div class="summary-item"><div class="summary-rank">2</div><div class="summary-content"><div class="summary-title">Axis Reserve</div><div class="summary-detail">Unlimited domestic + international. Zero restrictions.</div><div class="summary-highlight">₹50,000/yr · Super-premium</div></div></div>
-                <div class="summary-item"><div class="summary-rank">3</div><div class="summary-content"><div class="summary-title">SBI Card Elite</div><div class="summary-detail">8 domestic + 6 international. Fully unconditional.</div><div class="summary-highlight">₹4,999/yr · Best mid-range</div></div></div>
+                <div class="summary-item">
+                    <div class="summary-rank">1</div>
+                    <div class="summary-content">
+                        <div class="summary-title">HDFC Infinia Metal (CC)</div>
+                        <div class="summary-detail">Unlimited domestic + international via Priority Pass. No spend criteria. Add-on cards included.</div>
+                        <div class="summary-highlight">₹12,500/yr · Invite-only</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">2</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Axis Reserve (CC)</div>
+                        <div class="summary-detail">Unlimited domestic + international. Zero spend criteria. No restrictions whatsoever.</div>
+                        <div class="summary-highlight">₹50,000/yr · Super-premium</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">3</div>
+                    <div class="summary-content">
+                        <div class="summary-title">ICICI Emeralde Private Metal (CC)</div>
+                        <div class="summary-detail">Unlimited domestic + international Priority Pass. Add-ons included. No lounge spend criteria.</div>
+                        <div class="summary-highlight">₹12,000/yr · Waived at ₹10L</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">4</div>
+                    <div class="summary-content">
+                        <div class="summary-title">HDFC Diners Club Black Metal (CC)</div>
+                        <div class="summary-detail">Unlimited domestic + international via Diners + PP. Add-ons included.</div>
+                        <div class="summary-highlight">₹10,000/yr · Waived at ₹8L</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">5</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Axis Magnus (CC)</div>
+                        <div class="summary-detail">Unlimited domestic (₹50K/3m spend) + unlimited intl Priority Pass. 4 guest visits/year.</div>
+                        <div class="summary-highlight">₹12,500/yr · Waived at ₹25L</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">6</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Scapia Federal Bank (CC)</div>
+                        <div class="summary-detail">Unlimited domestic (₹10K/billing cycle). Lifetime free. Zero forex markup.</div>
+                        <div class="summary-highlight">₹0 Lifetime Free · Best LTF unlimited</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">7</div>
+                    <div class="summary-content">
+                        <div class="summary-title">SBI Card Elite (CC)</div>
+                        <div class="summary-detail">8 domestic + 6 international (Priority Pass). Fully unconditional. Best no-condition mid-range.</div>
+                        <div class="summary-highlight">₹4,999/yr · Waived at ₹10L</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">8</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Axis Atlas (CC)</div>
+                        <div class="summary-detail">Up to 18 domestic + 12 international (Platinum tier). Tier-based on annual spend.</div>
+                        <div class="summary-highlight">₹5,000/yr · Miles + Lounge value</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">9</div>
+                    <div class="summary-content">
+                        <div class="summary-title">HDFC Regalia Gold (CC)</div>
+                        <div class="summary-detail">3D/quarter (₹60K spend gate) + 6 intl PP unconditional. Strong intl access.</div>
+                        <div class="summary-highlight">₹2,500/yr · Good mid-range</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">10</div>
+                    <div class="summary-content">
+                        <div class="summary-title">AU Zenith+ (CC)</div>
+                        <div class="summary-detail">4 domestic/quarter + 2 intl/quarter via Priority Pass. No spend criteria.</div>
+                        <div class="summary-highlight">₹4,999/yr · Strong from a small finance bank</div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- CARDS WITH UNLIMITED LOUNGE ACCESS -->
+        <!-- ============================================================ -->
         <div class="summary-card">
-            <div class="summary-card-header"><span class="icon">🆓</span><h3>Zero Annual Fee Cards (LTF)</h3></div>
+            <div class="summary-card-header">
+                <span class="icon">∞</span>
+                <h3>Cards with Unlimited Lounge Access</h3>
+                <div class="sub">Domestic and/or international — no visit cap</div>
+            </div>
             <div class="summary-card-body">
-                <div class="summary-item"><div class="summary-rank">★</div><div class="summary-content"><div class="summary-title">IndusInd Tiger</div><div class="summary-detail">8 domestic + 2 international. Priority Pass. No spend.</div><div class="summary-highlight">₹0 LTF</div></div></div>
-                <div class="summary-item"><div class="summary-rank">★</div><div class="summary-content"><div class="summary-title">Scapia Federal Bank</div><div class="summary-detail">Unlimited domestic (₹10K/billing). Zero forex.</div><div class="summary-highlight">₹0 LTF</div></div></div>
-                <div class="summary-item"><div class="summary-rank">★</div><div class="summary-content"><div class="summary-title">IDFC FIRST Wealth</div><div class="summary-detail">2 domestic + 2 intl/quarter (₹20K/month spend).</div><div class="summary-highlight">₹0 LTF</div></div></div>
+                <div class="summary-item">
+                    <div class="summary-rank">✓</div>
+                    <div class="summary-content">
+                        <div class="summary-title">HDFC Infinia Metal</div>
+                        <div class="summary-detail">Domestic + International. No conditions. Priority Pass.</div>
+                        <div class="summary-highlight">₹12,500/yr — Invite-only</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">✓</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Axis Reserve</div>
+                        <div class="summary-detail">Domestic + International. Zero conditions. Priority Pass.</div>
+                        <div class="summary-highlight">₹50,000/yr — Super-premium</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">✓</div>
+                    <div class="summary-content">
+                        <div class="summary-title">ICICI Emeralde Private Metal</div>
+                        <div class="summary-detail">Domestic + International. No lounge spend criteria.</div>
+                        <div class="summary-highlight">₹12,000/yr — Waived at ₹10L</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">✓</div>
+                    <div class="summary-content">
+                        <div class="summary-title">HDFC Diners Club Black Metal</div>
+                        <div class="summary-detail">Domestic + International via Diners + PP. No conditions.</div>
+                        <div class="summary-highlight">₹10,000/yr — Waived at ₹8L</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">✓</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Axis Magnus</div>
+                        <div class="summary-detail">Unlimited domestic (conditional: ₹50K/3m) + unlimited intl PP (unconditional).</div>
+                        <div class="summary-highlight">₹12,500/yr — Partially conditional</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">✓</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Scapia Federal Bank (LTF)</div>
+                        <div class="summary-detail">Unlimited domestic with ₹10K/billing cycle spend. Lifetime Free!</div>
+                        <div class="summary-highlight">₹0 — Lowest threshold for unlimited</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">✓</div>
+                    <div class="summary-content">
+                        <div class="summary-title">SC Ultimate (International only)</div>
+                        <div class="summary-detail">Unlimited international via Priority Pass (no conditions). Domestic limited to 4/year.</div>
+                        <div class="summary-highlight">₹5,000/yr — Great for intl travel</div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- ZERO ANNUAL FEE CARDS WITH LOUNGE ACCESS (LTF) -->
+        <!-- ============================================================ -->
         <div class="summary-card">
-            <div class="summary-card-header"><span class="icon">∞</span><h3>Unlimited Lounge Access</h3></div>
+            <div class="summary-card-header">
+                <span class="icon">🆓</span>
+                <h3>Zero Annual Fee Cards with Lounge Access</h3>
+                <div class="sub">Lifetime Free (LTF) cards — no fee ever</div>
+            </div>
             <div class="summary-card-body">
-                <div class="summary-item"><div class="summary-rank">✓</div><div class="summary-content"><div class="summary-title">HDFC Infinia Metal</div><div class="summary-detail">Domestic + International. No conditions.</div></div></div>
-                <div class="summary-item"><div class="summary-rank">✓</div><div class="summary-content"><div class="summary-title">Axis Reserve</div><div class="summary-detail">Domestic + International. Zero conditions.</div></div></div>
-                <div class="summary-item"><div class="summary-rank">✓</div><div class="summary-content"><div class="summary-title">Scapia Federal Bank</div><div class="summary-detail">Unlimited domestic with ₹10K/billing cycle spend.</div></div></div>
+                <div class="summary-item">
+                    <div class="summary-rank">★</div>
+                    <div class="summary-content">
+                        <div class="summary-title">IndusInd Tiger Credit Card</div>
+                        <div class="summary-detail">2 domestic/quarter + 2 intl/year (Priority Pass). Zero spend criteria. Golf included.</div>
+                        <div class="summary-highlight">₹0 LTF — Best overall LTF lounge card</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">★</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Scapia Federal Bank Credit Card</div>
+                        <div class="summary-detail">Unlimited domestic (₹10K/billing). Zero forex markup. Popular with frequent flyers.</div>
+                        <div class="summary-highlight">₹0 LTF — Best unlimited LTF</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">★</div>
+                    <div class="summary-content">
+                        <div class="summary-title">IDFC FIRST Wealth Credit Card</div>
+                        <div class="summary-detail">2 domestic + 2 intl/quarter (₹20K/month spend). Railway lounge too.</div>
+                        <div class="summary-highlight">₹0 LTF — Intl access with no fee</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">★</div>
+                    <div class="summary-content">
+                        <div class="summary-title">IDFC FIRST Select Credit Card</div>
+                        <div class="summary-detail">2 domestic/quarter (₹20K/month). Railway lounge (4/quarter). Simple rewards.</div>
+                        <div class="summary-highlight">₹0 LTF — Entry-level domestic access</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">★</div>
+                    <div class="summary-content">
+                        <div class="summary-title">IDFC FIRST Millennia Credit Card</div>
+                        <div class="summary-detail">Limited lounge access on spend criteria. Very basic but free forever.</div>
+                        <div class="summary-highlight">₹0 LTF — Very limited access</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">★</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Axis Burgundy Debit Card</div>
+                        <div class="summary-detail">3 domestic visits/quarter. No annual fee for Burgundy account holders.</div>
+                        <div class="summary-highlight">₹0 — Requires Axis Burgundy relationship</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- BEST BUDGET CARDS (₹500–₹3,000 Annual Fee) -->
+        <!-- ============================================================ -->
+        <div class="summary-card">
+            <div class="summary-card-header">
+                <span class="icon">💰</span>
+                <h3>Best Budget Cards (₹500–₹3,000 Annual Fee)</h3>
+                <div class="sub">Maximum lounge value per rupee of annual fee</div>
+            </div>
+            <div class="summary-card-body">
+                <div class="summary-item">
+                    <div class="summary-rank">1</div>
+                    <div class="summary-content">
+                        <div class="summary-title">YES First Preferred (CC)</div>
+                        <div class="summary-detail">8 domestic + 4 international/year. Priority Pass. Unconditional access. Incredible value.</div>
+                        <div class="summary-highlight">₹999/yr — 12 visits incl. intl PP</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">2</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Axis Privilege (CC)</div>
+                        <div class="summary-detail">8 domestic/year. Fully unconditional. No spend gates. Clean, reliable access.</div>
+                        <div class="summary-highlight">₹1,500/yr — 8 guaranteed visits</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">3</div>
+                    <div class="summary-content">
+                        <div class="summary-title">HSBC Live+ (CC)</div>
+                        <div class="summary-detail">4 domestic/year. Unconditional. Plus 5% cashback on Amazon and 20% on Swiggy.</div>
+                        <div class="summary-highlight">₹999/yr — Low fee, clean access</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">4</div>
+                    <div class="summary-content">
+                        <div class="summary-title">SBI Card Prime (CC)</div>
+                        <div class="summary-detail">8 domestic + 4 international (PP). Unconditional. Strong rewards on dining &amp; movies.</div>
+                        <div class="summary-highlight">₹2,999/yr — Reliable unconditional access</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">5</div>
+                    <div class="summary-content">
+                        <div class="summary-title">AU Ixigo (CC)</div>
+                        <div class="summary-detail">16 domestic + railway + 1 intl PP. Zero forex. ₹1,000 Ixigo credit on joining.</div>
+                        <div class="summary-highlight">₹999/yr — Casual traveller favourite</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank">6</div>
+                    <div class="summary-content">
+                        <div class="summary-title">HDFC Regalia Gold (CC)</div>
+                        <div class="summary-detail">3D/qtr (spend-gated) + 6 intl PP (unconditional). Versatile mid-premium card.</div>
+                        <div class="summary-highlight">₹2,500/yr — Waived at ₹3L spend</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- LOUNGE ACCESS NETWORKS IN INDIA (2026) -->
+        <!-- ============================================================ -->
+        <div class="summary-card">
+            <div class="summary-card-header">
+                <span class="icon">🌐</span>
+                <h3>Lounge Access Networks in India (2026)</h3>
+                <div class="sub">Which network your card uses matters</div>
+            </div>
+            <div class="summary-card-body">
+                <div class="summary-item">
+                    <div class="summary-rank" style="background:#92400e;">PP</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Priority Pass</div>
+                        <div class="summary-detail">Gold standard. 1,700+ lounges in 140+ countries. ~25-30 Indian airports. Used by HDFC, Axis, SBI, ICICI, IndusInd, YES, AU, SC. Unaffected by DreamFolks disruption.</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="background:#3730a3;font-size:8px;">DF</div>
+                    <div class="summary-content">
+                        <div class="summary-title">DreamFolks</div>
+                        <div class="summary-detail">Largest domestic network. Some operators ended partnerships mid-2025. ICICI phased out. IDFC First moved to Elite Assist. Axis, Kotak, HSBC, RBL still using.</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="background:#9d174d;font-size:7px;">EA</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Elite Assist (TFS subsidiary)</div>
+                        <div class="summary-detail">New entrant. IDFC FIRST Bank migrated to this. Travel Food Services subsidiary managing domestic lounges at many airports.</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="background:#065f46;">LK</div>
+                    <div class="summary-content">
+                        <div class="summary-title">LoungeKey</div>
+                        <div class="summary-detail">Used for IDFC FIRST Wealth &amp; Private debit cards for international access. Requires app registration at loungekey.com before first visit.</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="background:#1d4ed8;font-size:8px;">AL</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Adani LoungeOne</div>
+                        <div class="summary-detail">New 2025-26 entrant. Covers Adani-operated airports: Ahmedabad, Jaipur, Lucknow, Mangalore, Guwahati, Trivandrum. Direct online booking available.</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="background:#374151;font-size:8px;">DC</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Diners Club</div>
+                        <div class="summary-detail">HDFC Diners Club cards access Diners Club network globally — covers slightly different set of lounges than Priority Pass. Strong international coverage.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- BEST CARD BY TRAVELLER PROFILE -->
+        <!-- ============================================================ -->
+        <div class="summary-card">
+            <div class="summary-card-header">
+                <span class="icon">🎯</span>
+                <h3>Best Card by Traveller Profile</h3>
+                <div class="sub">Personalised recommendations</div>
+            </div>
+            <div class="summary-card-body">
+                <div class="summary-item">
+                    <div class="summary-rank" style="font-size:9px;">✈✈✈</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Heavy Domestic Flyer (10+ trips/year)</div>
+                        <div class="summary-detail">Scapia (₹0, unlimited) or HDFC Infinia/Axis Magnus (₹12.5K, unlimited). Scapia if budget-conscious, Magnus if you also want intl PP.</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="font-size:9px;">✈🌍</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Frequent International Traveller</div>
+                        <div class="summary-detail">HDFC Infinia / Axis Reserve / ICICI Emeralde for unlimited. SBI Elite (₹4,999) for no-condition Priority Pass at lower fee.</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="font-size:9px;">✈</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Occasional Flyer (4–6 trips/year)</div>
+                        <div class="summary-detail">SBI Elite (no conditions, 8D+6I) or IndusInd Tiger (LTF, 8D+2I) or YES First Preferred (₹999, 8D+4I).</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="font-size:9px;">₹0</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Zero Fee Priority (LTF)</div>
+                        <div class="summary-detail">IndusInd Tiger (best — intl PP too), Scapia (unlimited domestic), IDFC FIRST Wealth (intl LoungeKey + domestic).</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="font-size:9px;">👨‍👩‍👧</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Family / Guest Access Needed</div>
+                        <div class="summary-detail">HDFC Infinia (add-on cards included), Axis Magnus (4 guest visits/year), ICICI Emeralde (add-on included).</div>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-rank" style="font-size:9px;">🏦</div>
+                    <div class="summary-content">
+                        <div class="summary-title">Debit Card User (no credit card)</div>
+                        <div class="summary-detail">ICICI Sapphiro Debit (16/yr, ₹1,999), HDFC Infiniti Debit (16/yr, ₹2,500), IDFC FIRST Wealth Debit (LTF + intl LoungeKey).</div>
+                    </div>
+                </div>
             </div>
         </div>
     `;
 }
-
 // ============================================================
 // INITIALIZATION FUNCTIONS
 // ============================================================
