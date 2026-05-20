@@ -507,3 +507,231 @@ function escapeHtml(str) {
 }
 
 console.log('✅ FareFlyers script loaded successfully');
+
+// ============================================================
+// AIRPORT DATA FOR SEARCH SUGGESTIONS
+// ============================================================
+const airportsData = [
+    ["DEL", "Indira Gandhi International Airport", "New Delhi", "Delhi"],
+    ["BOM", "Chhatrapati Shivaji Maharaj International Airport", "Mumbai", "Maharashtra"],
+    ["MAA", "Chennai International Airport", "Chennai", "Tamil Nadu"],
+    ["CCU", "Netaji Subhas Chandra Bose International Airport", "Kolkata", "West Bengal"],
+    ["BLR", "Kempegowda International Airport", "Bengaluru", "Karnataka"],
+    ["HYD", "Rajiv Gandhi International Airport", "Hyderabad", "Telangana"],
+    ["COK", "Cochin International Airport", "Kochi", "Kerala"],
+    ["AMD", "Sardar Vallabhbhai Patel International Airport", "Ahmedabad", "Gujarat"],
+    ["PNQ", "Pune Airport", "Pune", "Maharashtra"],
+    ["GOI", "Goa International Airport", "Goa", "Goa"],
+    ["GAU", "Lokpriya Gopinath Bordoloi International Airport", "Guwahati", "Assam"],
+    ["JAI", "Jaipur International Airport", "Jaipur", "Rajasthan"],
+    ["LKO", "Chaudhary Charan Singh International Airport", "Lucknow", "Uttar Pradesh"],
+    ["PAT", "Lok Nayak Jayaprakash Airport", "Patna", "Bihar"],
+    ["IXC", "Shaheed Bhagat Singh International Airport", "Chandigarh", "Punjab"],
+    ["VNS", "Lal Bahadur Shastri International Airport", "Varanasi", "Uttar Pradesh"],
+    ["NAG", "Dr. Babasaheb Ambedkar International Airport", "Nagpur", "Maharashtra"],
+    ["TRV", "Trivandrum International Airport", "Thiruvananthapuram", "Kerala"],
+    ["CJB", "Coimbatore International Airport", "Coimbatore", "Tamil Nadu"],
+    ["SXR", "Sheikh ul-Alam International Airport", "Srinagar", "Jammu & Kashmir"],
+    ["IXE", "Mangaluru International Airport", "Mangaluru", "Karnataka"],
+    ["BBI", "Biju Patnaik International Airport", "Bhubaneswar", "Odisha"],
+    ["VTZ", "Visakhapatnam Airport", "Visakhapatnam", "Andhra Pradesh"],
+    ["CCJ", "Calicut International Airport", "Kozhikode", "Kerala"],
+    ["IXM", "Madurai Airport", "Madurai", "Tamil Nadu"],
+    ["TRZ", "Tiruchirappalli International Airport", "Tiruchirappalli", "Tamil Nadu"],
+    ["IDR", "Devi Ahilya Bai Holkar Airport", "Indore", "Madhya Pradesh"],
+    ["ATQ", "Sri Guru Ram Dass Jee International Airport", "Amritsar", "Punjab"],
+    ["UDR", "Maharana Pratap Airport", "Udaipur", "Rajasthan"],
+    ["JDH", "Jodhpur Airport", "Jodhpur", "Rajasthan"],
+    ["RAJ", "Rajkot Airport", "Rajkot", "Gujarat"],
+    ["STV", "Surat Airport", "Surat", "Gujarat"],
+    ["BDQ", "Vadodara Airport", "Vadodara", "Gujarat"]
+];
+
+// Search airports function
+function searchAirports(searchTerm, maxResults = 8) {
+    if (!searchTerm || searchTerm.length < 2) return [];
+    const term = searchTerm.toLowerCase();
+    return airportsData.filter(airport => 
+        airport[0].toLowerCase().includes(term) ||      // IATA code
+        airport[1].toLowerCase().includes(term) ||      // Airport name
+        airport[2].toLowerCase().includes(term)         // City name
+    ).slice(0, maxResults);
+}
+// ============================================================
+// AIRPORT SEARCH AUTO-SUGGEST
+// ============================================================
+const fromInput = document.getElementById('s-from');
+const toInput = document.getElementById('s-to');
+const fromSuggestions = document.getElementById('fromSuggestions');
+const toSuggestions = document.getElementById('toSuggestions');
+
+function setupAirportSearch(inputElement, suggestionsDiv) {
+    if (!inputElement || !suggestionsDiv) return;
+    
+    inputElement.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.trim();
+        
+        if (searchTerm.length >= 2) {
+            const results = searchAirports(searchTerm);
+            displaySuggestions(results, suggestionsDiv, inputElement);
+        } else {
+            suggestionsDiv.classList.remove('show');
+        }
+    });
+    // ============================================================
+// AIRPORT DATA FOR SEARCH SUGGESTIONS
+// ============================================================
+const airportsData = [
+    ["DEL", "Indira Gandhi International Airport", "New Delhi", "Delhi"],
+    ["BOM", "Chhatrapati Shivaji Maharaj International Airport", "Mumbai", "Maharashtra"],
+    ["MAA", "Chennai International Airport", "Chennai", "Tamil Nadu"],
+    ["CCU", "Netaji Subhas Chandra Bose International Airport", "Kolkata", "West Bengal"],
+    ["BLR", "Kempegowda International Airport", "Bengaluru", "Karnataka"],
+    ["HYD", "Rajiv Gandhi International Airport", "Hyderabad", "Telangana"],
+    ["COK", "Cochin International Airport", "Kochi", "Kerala"],
+    ["AMD", "Sardar Vallabhbhai Patel International Airport", "Ahmedabad", "Gujarat"],
+    ["PNQ", "Pune Airport", "Pune", "Maharashtra"],
+    ["GOI", "Goa International Airport", "Goa", "Goa"],
+    ["GAU", "Lokpriya Gopinath Bordoloi International Airport", "Guwahati", "Assam"],
+    ["JAI", "Jaipur International Airport", "Jaipur", "Rajasthan"],
+    ["LKO", "Chaudhary Charan Singh International Airport", "Lucknow", "Uttar Pradesh"],
+    ["PAT", "Lok Nayak Jayaprakash Airport", "Patna", "Bihar"],
+    ["IXC", "Shaheed Bhagat Singh International Airport", "Chandigarh", "Punjab"],
+    ["VNS", "Lal Bahadur Shastri International Airport", "Varanasi", "Uttar Pradesh"],
+    ["NAG", "Dr. Babasaheb Ambedkar International Airport", "Nagpur", "Maharashtra"],
+    ["TRV", "Trivandrum International Airport", "Thiruvananthapuram", "Kerala"],
+    ["CJB", "Coimbatore International Airport", "Coimbatore", "Tamil Nadu"],
+    ["SXR", "Sheikh ul-Alam International Airport", "Srinagar", "Jammu & Kashmir"],
+    ["IXE", "Mangaluru International Airport", "Mangaluru", "Karnataka"],
+    ["BBI", "Biju Patnaik International Airport", "Bhubaneswar", "Odisha"],
+    ["VTZ", "Visakhapatnam Airport", "Visakhapatnam", "Andhra Pradesh"],
+    ["CCJ", "Calicut International Airport", "Kozhikode", "Kerala"],
+    ["IXM", "Madurai Airport", "Madurai", "Tamil Nadu"],
+    ["TRZ", "Tiruchirappalli International Airport", "Tiruchirappalli", "Tamil Nadu"],
+    ["IDR", "Devi Ahilya Bai Holkar Airport", "Indore", "Madhya Pradesh"],
+    ["ATQ", "Sri Guru Ram Dass Jee International Airport", "Amritsar", "Punjab"],
+    ["UDR", "Maharana Pratap Airport", "Udaipur", "Rajasthan"],
+    ["JDH", "Jodhpur Airport", "Jodhpur", "Rajasthan"],
+    ["RAJ", "Rajkot Airport", "Rajkot", "Gujarat"],
+    ["STV", "Surat Airport", "Surat", "Gujarat"],
+    ["BDQ", "Vadodara Airport", "Vadodara", "Gujarat"]
+];
+
+function searchAirports(searchTerm, maxResults = 8) {
+    if (!searchTerm || searchTerm.length < 2) return [];
+    const term = searchTerm.toLowerCase();
+    return airportsData.filter(airport => 
+        airport[0].toLowerCase().includes(term) ||
+        airport[1].toLowerCase().includes(term) ||
+        airport[2].toLowerCase().includes(term)
+    ).slice(0, maxResults);
+}
+
+// ============================================================
+// AIRPORT SEARCH AUTO-SUGGEST
+// ============================================================
+const fromInput = document.getElementById('s-from');
+const toInput = document.getElementById('s-to');
+const fromSuggestions = document.getElementById('fromSuggestions');
+const toSuggestions = document.getElementById('toSuggestions');
+
+function setupAirportSearch(inputElement, suggestionsDiv) {
+    if (!inputElement || !suggestionsDiv) return;
+    
+    inputElement.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.trim();
+        
+        if (searchTerm.length >= 2) {
+            const results = searchAirports(searchTerm);
+            displaySuggestions(results, suggestionsDiv, inputElement);
+        } else {
+            suggestionsDiv.classList.remove('show');
+        }
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!inputElement.contains(e.target) && !suggestionsDiv.contains(e.target)) {
+            suggestionsDiv.classList.remove('show');
+        }
+    });
+}
+
+function displaySuggestions(airports, suggestionsDiv, inputElement) {
+    if (airports.length === 0) {
+        suggestionsDiv.classList.remove('show');
+        return;
+    }
+    
+    suggestionsDiv.innerHTML = airports.map(airport => `
+        <div class="suggestion-item" onclick="selectAirport('${airport[0]}', '${airport[2]}', '${inputElement.id}')">
+            <div>
+                <span class="suggestion-code">${airport[0]}</span>
+                <span class="suggestion-name">${airport[1]}</span>
+                <span class="suggestion-city">${airport[2]}, ${airport[3]}</span>
+            </div>
+        </div>
+    `).join('');
+    
+    suggestionsDiv.classList.add('show');
+}
+
+function selectAirport(code, city, inputId) {
+    const inputElement = document.getElementById(inputId);
+    if (inputElement) {
+        inputElement.value = city;
+    }
+    
+    const suggestionsDiv = inputId === 's-from' ? fromSuggestions : toSuggestions;
+    if (suggestionsDiv) {
+        suggestionsDiv.classList.remove('show');
+    }
+}
+
+// Initialize if elements exist
+if (fromInput && toInput && fromSuggestions && toSuggestions) {
+    setupAirportSearch(fromInput, fromSuggestions);
+    setupAirportSearch(toInput, toSuggestions);
+}
+    // Close suggestions when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!inputElement.contains(e.target) && !suggestionsDiv.contains(e.target)) {
+            suggestionsDiv.classList.remove('show');
+        }
+    });
+}
+
+function displaySuggestions(airports, suggestionsDiv, inputElement) {
+    if (airports.length === 0) {
+        suggestionsDiv.classList.remove('show');
+        return;
+    }
+    
+    suggestionsDiv.innerHTML = airports.map(airport => `
+        <div class="suggestion-item" onclick="selectAirport('${airport[0]}', '${airport[2]}', '${inputElement.id}')">
+            <div>
+                <span class="suggestion-code">${airport[0]}</span>
+                <span class="suggestion-name">${airport[1]}</span>
+                <span class="suggestion-city">${airport[2]}, ${airport[3]}</span>
+            </div>
+        </div>
+    `).join('');
+    
+    suggestionsDiv.classList.add('show');
+}
+
+function selectAirport(code, city, inputId) {
+    const inputElement = document.getElementById(inputId);
+    if (inputElement) {
+        inputElement.value = city;
+    }
+    
+    // Close suggestions
+    const suggestionsDiv = inputId === 's-from' ? fromSuggestions : toSuggestions;
+    if (suggestionsDiv) {
+        suggestionsDiv.classList.remove('show');
+    }
+}
+
+// Initialize
+setupAirportSearch(fromInput, fromSuggestions);
+setupAirportSearch(toInput, toSuggestions);
