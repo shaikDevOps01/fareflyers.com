@@ -698,20 +698,17 @@ footer {
     border-radius: 16px;
     padding: 16px;
 }
-
 .card-img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: auto;              /* Auto height since all images same ratio */
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .card-img:hover {
     transform: scale(1.02);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
-
 .bank-logo-emoji {
     font-size: 32px;
 }
