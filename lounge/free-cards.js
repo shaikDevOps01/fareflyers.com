@@ -111,7 +111,7 @@ const cardsData = [
         bank: "RBL",
         name: "World Safari",
         logo: "🌍",
-        cardImage: "images/rbl-world-safari.png",
+        cardImage: "images/safari.png",
         domestic: "6",
         international: "3",
         fee: "₹0",

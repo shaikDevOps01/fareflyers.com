@@ -1067,7 +1067,7 @@ footer {
     height: 32px;
 }
 /* ============================================================ */
-/* MOBILE RESPONSIVE - ADD THIS AT THE BOTTOM OF YOUR CSS
+/* MOBILE RESPONSIVE - WITH BIGGER FONTS
 /* ============================================================ */
 
 /* Tablet & Mobile (up to 1024px) */
@@ -1079,9 +1079,9 @@ footer {
 
 /* Mobile Devices (up to 768px) */
 @media (max-width: 768px) {
-    /* Typography - Clean & Readable */
+    /* ===== BIGGER FONTS FOR MOBILE ===== */
     body {
-        font-size: 15px;
+        font-size: 16px !important;
     }
     
     h1 {
@@ -1097,10 +1097,52 @@ footer {
     }
     
     .search-title {
-        font-size: 20px;
+        font-size: 22px !important;
     }
     
-    /* Header - Clean Mobile Layout */
+    .search-sub {
+        font-size: 14px !important;
+    }
+    
+    .hero-sub {
+        font-size: 15px !important;
+    }
+    
+    .dest-from, .dest-to {
+        font-size: 13px !important;
+    }
+    
+    .chip {
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+    }
+    
+    .stat-number {
+        font-size: 32px !important;
+    }
+    
+    .stat-label {
+        font-size: 14px !important;
+    }
+    
+    .trust-card p {
+        font-size: 14px !important;
+    }
+    
+    .provide-card p {
+        font-size: 14px !important;
+    }
+    
+    .quick-chip {
+        font-size: 13px !important;
+        padding: 6px 14px !important;
+    }
+    
+    .footer-col a {
+        font-size: 14px !important;
+    }
+    
+    /* ===== HEADER ===== */
     .header-inner {
         flex-wrap: wrap;
         gap: 10px;
@@ -1122,7 +1164,7 @@ footer {
     .btn-header {
         order: 1;
         padding: 6px 14px;
-        font-size: 12px;
+        font-size: 13px !important;
     }
     
     /* Mobile Navigation */
@@ -1167,11 +1209,6 @@ footer {
         text-align: center;
     }
     
-    .hero-sub {
-        max-width: 100%;
-        font-size: 15px;
-    }
-    
     .stats-row {
         justify-content: center;
         flex-wrap: wrap;
@@ -1188,6 +1225,7 @@ footer {
         max-width: 250px;
         text-align: center;
         padding: 12px 20px;
+        font-size: 14px !important;
     }
     
     /* Slideshow */
@@ -1218,11 +1256,17 @@ footer {
         gap: 12px;
     }
     
-    .search-sub {
-        font-size: 13px;
+    .search-field input,
+    .search-field select {
+        font-size: 15px !important;
+        padding: 12px !important;
     }
     
-    /* Popular Routes - Clean Pill Boxes */
+    .search-field label {
+        font-size: 12px !important;
+    }
+    
+    /* Popular Routes */
     .dest-grid {
         flex-wrap: wrap;
         gap: 8px;
@@ -1232,8 +1276,8 @@ footer {
         padding: 5px 12px;
     }
     
-    .dest-from, .dest-to {
-        font-size: 11px;
+    .dest-arrow {
+        font-size: 12px !important;
     }
     
     /* Compare Section */
@@ -1244,11 +1288,6 @@ footer {
     
     .group-header {
         gap: 8px;
-    }
-    
-    .chip {
-        font-size: 10px;
-        padding: 4px 10px;
     }
     
     /* Mission Section */
@@ -1278,10 +1317,6 @@ footer {
         padding: 20px;
     }
     
-    .stat-number {
-        font-size: 32px;
-    }
-    
     /* Trust Section */
     .trust-grid {
         grid-template-columns: 1fr;
@@ -1290,6 +1325,10 @@ footer {
     
     .trust-card {
         padding: 24px 20px;
+    }
+    
+    .trust-card h3 {
+        font-size: 18px !important;
     }
     
     /* What We Provide */
@@ -1302,19 +1341,23 @@ footer {
         padding: 20px;
     }
     
+    .provide-card h3 {
+        font-size: 16px !important;
+    }
+    
     /* Lounge Search */
     .lounge-search-box {
         padding: 20px;
     }
     
     .lounge-search-input {
-        font-size: 13px;
+        font-size: 15px !important;
         padding: 12px 40px 12px 45px;
     }
     
     .lounge-check-btn {
         padding: 12px 20px;
-        font-size: 14px;
+        font-size: 15px !important;
     }
     
     .access-details-grid {
@@ -1328,11 +1371,6 @@ footer {
     
     .quick-examples {
         gap: 8px;
-    }
-    
-    .quick-chip {
-        padding: 5px 12px;
-        font-size: 11px;
     }
     
     /* Result Section */
@@ -1391,6 +1429,7 @@ footer {
     .footer-brand p {
         margin-left: auto;
         margin-right: auto;
+        font-size: 13px !important;
     }
     
     .footer-social {
@@ -1405,7 +1444,7 @@ footer {
     
     .view-all-link {
         padding: 8px 16px;
-        font-size: 12px;
+        font-size: 13px !important;
     }
 }
 
@@ -1416,7 +1455,7 @@ footer {
     }
     
     .tag {
-        font-size: 9px;
+        font-size: 10px !important;
         padding: 4px 12px;
     }
     
@@ -1443,7 +1482,7 @@ footer {
     }
     
     .search-title {
-        font-size: 18px;
+        font-size: 20px !important;
     }
     
     .dest-card {
@@ -1451,7 +1490,7 @@ footer {
     }
     
     .dest-from, .dest-to {
-        font-size: 10px;
+        font-size: 12px !important;
     }
     
     .card-title-section h3 {
@@ -1510,63 +1549,10 @@ footer {
         transform: none !important;
     }
 }
-/* Airport Search Suggestions */
-.airport-suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--navy-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    max-height: 250px;
-    overflow-y: auto;
-    z-index: 1000;
-    display: none;
-    margin-top: 4px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
 
-.airport-suggestions.show {
-    display: block;
-}
-
-.suggestion-item {
-    padding: 10px 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-bottom: 1px solid var(--border-subtle);
-}
-
-.suggestion-item:last-child {
-    border-bottom: none;
-}
-
-.suggestion-item:hover {
-    background: var(--gold-dim);
-}
-
-.suggestion-code {
-    font-family: 'DM Mono', monospace;
-    font-weight: 700;
-    color: var(--gold);
-    font-size: 12px;
-    display: inline-block;
-    width: 45px;
-}
-
-.suggestion-name {
-    font-size: 13px;
-    color: var(--white);
-}
-
-.suggestion-city {
-    font-size: 11px;
-    color: var(--silver);
-    display: block;
-    margin-top: 2px;
-}
-/* Airport Search Suggestions - ADD THIS AT THE END OF YOUR CSS FILE */
+/* ============================================================ */
+/* AIRPORT SEARCH SUGGESTIONS (Single copy)
+/* ============================================================ */
 .airport-suggestions {
     position: absolute;
     top: 100%;
