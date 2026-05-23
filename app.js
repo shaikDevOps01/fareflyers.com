@@ -351,19 +351,188 @@ if (hamburger) {
         }
     });
 }
-
 // ============================================================
-// LOUNGE SEARCH FUNCTIONALITY
+// LOUNGE SEARCH FUNCTIONALITY - FIXED VERSION
 // ============================================================
-const loungeSearchInput = document.getElementById('loungeSearchInput');
-const searchSuggestions = document.getElementById('searchSuggestions');
-const clearSearchBtn = document.getElementById('clearSearch');
-const loungeResultArea = document.getElementById('loungeResultArea');
 
-if (loungeSearchInput) {
+// Wait for HTML to load first
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Get elements after HTML is ready
+    const loungeSearchInput = document.getElementById('loungeSearchInput');
+    const searchSuggestions = document.getElementById('searchSuggestions');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const loungeResultArea = document.getElementById('loungeResultArea');
+    
+    // Check if elements exist
+    if (!loungeSearchInput) {
+        console.error('loungeSearchInput not found');
+        return;
+    }
+    if (!searchSuggestions) {
+        console.error('searchSuggestions not found');
+        return;
+    }
+    
+    // Search cards function
+    function searchCards(searchTerm) {
+        if (!searchTerm || searchTerm.length < 2) return [];
+        const term = searchTerm.toLowerCase();
+        if (typeof LOUNGE_CARDS_DATABASE === 'undefined') {
+            console.error('LOUNGE_CARDS_DATABASE not loaded');
+            return [];
+        }
+        return LOUNGE_CARDS_DATABASE.filter(card => 
+            card.name.toLowerCase().includes(term) || 
+            card.bank.toLowerCase().includes(term)
+        ).slice(0, 8);
+    }
+    
+    // Display suggestions
+    function displaySuggestions(suggestions) {
+        if (!searchSuggestions) return;
+        
+        if (!suggestions || suggestions.length === 0) {
+            searchSuggestions.classList.remove('show');
+            return;
+        }
+        
+        searchSuggestions.innerHTML = suggestions.map(card => {
+            const escapedName = card.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+            return `
+                <div class="suggestion-item" onclick="selectSuggestion('${escapedName}')">
+                    <div>
+                        <span class="suggestion-name">${card.name}</span>
+                        <span class="suggestion-bank">${card.bank}</span>
+                    </div>
+                    ${card.loungeAccess ? '<span class="suggestion-badge">✅ Lounge Access</span>' : '<span class="suggestion-badge">❌ No Access</span>'}
+                </div>
+            `;
+        }).join('');
+        
+        searchSuggestions.classList.add('show');
+    }
+    
+    // Select suggestion
+    window.selectSuggestion = function(cardName) {
+        if (loungeSearchInput) {
+            loungeSearchInput.value = cardName;
+        }
+        if (searchSuggestions) {
+            searchSuggestions.classList.remove('show');
+        }
+        if (clearSearchBtn) {
+            clearSearchBtn.style.display = 'block';
+        }
+        searchLoungeCard();
+    };
+    
+    // Quick search
+    window.quickSearchCard = function(cardName) {
+        if (loungeSearchInput) {
+            loungeSearchInput.value = cardName;
+        }
+        if (clearSearchBtn) {
+            clearSearchBtn.style.display = 'block';
+        }
+        if (searchSuggestions) {
+            searchSuggestions.classList.remove('show');
+        }
+        searchLoungeCard();
+    };
+    
+    // Get card details
+    function getCardDetails(searchTerm) {
+        if (!searchTerm) return null;
+        const term = searchTerm.toLowerCase();
+        if (typeof LOUNGE_CARDS_DATABASE === 'undefined') return null;
+        return LOUNGE_CARDS_DATABASE.find(card => 
+            card.name.toLowerCase().includes(term) || 
+            card.bank.toLowerCase().includes(term)
+        );
+    }
+    
+    // Main search function
+    window.searchLoungeCard = function() {
+        if (!loungeSearchInput) return;
+        
+        const searchTerm = loungeSearchInput.value.trim();
+        if (!searchTerm) {
+            alert('🔍 Please enter a card name to search');
+            return;
+        }
+        
+        const card = getCardDetails(searchTerm);
+        if (!card) {
+            displayNoAccessResult(searchTerm);
+            return;
+        }
+        
+        if (card.loungeAccess) {
+            displayAccessResult(card);
+        } else {
+            displayNoAccessResult(card.name);
+        }
+    };
+    
+    // Display access result
+    function displayAccessResult(card) {
+        if (!loungeResultArea) return;
+        
+        const domesticText = card.domesticVisits === "Unlimited" ? "Unlimited visits/year" : `${card.domesticVisits || '0'} visits/year`;
+        const domesticQuarter = card.domesticPerQuarter ? `(${card.domesticPerQuarter} per quarter)` : '';
+        const domesticSpend = card.domesticSpend ? `<div class="spend-note">💰 ${card.domesticSpend}</div>` : '';
+        const internationalText = card.internationalVisits === "Unlimited" ? "Unlimited visits/year" : (!card.internationalVisits || card.internationalVisits === "0") ? "Not available" : `${card.internationalVisits} visits/year`;
+        const internationalSpend = card.internationalSpend ? `<div class="spend-note">💰 ${card.internationalSpend}</div>` : '';
+        
+        loungeResultArea.innerHTML = `
+            <div class="access-result-card">
+                <div class="access-result-header">
+                    <div class="card-title-section">
+                        <div class="card-bank">🏦 ${card.bank} Bank</div>
+                        <h3>💳 ${card.name} ${card.variant || ''}</h3>
+                    </div>
+                    <div class="access-status-badge">✅ Lounge Access Available</div>
+                </div>
+                <div class="access-details-grid">
+                    <div class="access-detail-item">
+                        <span class="detail-label">✈️ Domestic Lounges</span>
+                        <span class="detail-value">${domesticText}</span>
+                        <span class="detail-sub">${domesticQuarter}</span>
+                        ${domesticSpend}
+                    </div>
+                    <div class="access-detail-item">
+                        <span class="detail-label">🌍 International Lounges</span>
+                        <span class="detail-value">${internationalText}</span>
+                        ${card.network ? `<span class="detail-sub">Network: ${card.network}</span>` : ''}
+                        ${internationalSpend}
+                    </div>
+                </div>
+            </div>
+        `;
+        loungeResultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    
+    // Display no access result
+    function displayNoAccessResult(cardName) {
+        if (!loungeResultArea) return;
+        loungeResultArea.innerHTML = `
+            <div class="no-access-card">
+                <div class="sad-emoji">😢</div>
+                <h4>Sorry, "${cardName}" doesn't have lounge access</h4>
+                <p>Don't worry! Many cards offer FREE lounge access with zero annual fees.</p>
+                <a href="lounge/cards.html" class="how-about-btn" style="display: inline-block; text-decoration: none;">
+                    🔥 How about these 50+ cards with lounge access?
+                </a>
+            </div>
+        `;
+        loungeResultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    
+    // Input event listener
     loungeSearchInput.addEventListener('input', function(e) {
         const searchTerm = e.target.value.trim();
-        if (searchTerm.length > 0) {
+        if (searchTerm.length >= 2) {
             if (clearSearchBtn) clearSearchBtn.style.display = 'block';
             const suggestions = searchCards(searchTerm);
             displaySuggestions(suggestions);
@@ -373,6 +542,7 @@ if (loungeSearchInput) {
         }
     });
     
+    // Clear button
     if (clearSearchBtn) {
         clearSearchBtn.addEventListener('click', function() {
             loungeSearchInput.value = '';
@@ -383,131 +553,16 @@ if (loungeSearchInput) {
         });
     }
     
+    // Click outside to close suggestions
     document.addEventListener('click', function(e) {
-        if (!loungeSearchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+        if (loungeSearchInput && !loungeSearchInput.contains(e.target) && 
+            searchSuggestions && !searchSuggestions.contains(e.target)) {
             if (searchSuggestions) searchSuggestions.classList.remove('show');
         }
     });
-}
-
-function displaySuggestions(suggestions) {
-    if (!searchSuggestions) return;
-    if (suggestions.length === 0) {
-        searchSuggestions.classList.remove('show');
-        return;
-    }
     
-    searchSuggestions.innerHTML = suggestions.map(card => `
-        <div class="suggestion-item" onclick="selectSuggestion('${card.name.replace(/'/g, "\\'")}', '${card.bank}')">
-            <div>
-                <span class="suggestion-name">${card.name}</span>
-                <span class="suggestion-bank">${card.bank}</span>
-            </div>
-            ${card.loungeAccess ? '<span class="suggestion-badge">✅ Lounge Access</span>' : '<span class="suggestion-badge" style="background:#ff6b6b20; color:#ff6b6b;">❌ No Access</span>'}
-        </div>
-    `).join('');
-    
-    searchSuggestions.classList.add('show');
-}
-
-function selectSuggestion(cardName, bank) {
-    loungeSearchInput.value = cardName;
-    if (searchSuggestions) searchSuggestions.classList.remove('show');
-    if (clearSearchBtn) clearSearchBtn.style.display = 'block';
-    searchLoungeCard();
-}
-
-function quickSearchCard(cardName) {
-    loungeSearchInput.value = cardName;
-    if (clearSearchBtn) clearSearchBtn.style.display = 'block';
-    if (searchSuggestions) searchSuggestions.classList.remove('show');
-    searchLoungeCard();
-}
-
-function searchLoungeCard() {
-    const searchTerm = loungeSearchInput.value.trim();
-    if (!searchTerm) {
-        showToast('🔍 Please enter a card name to search');
-        return;
-    }
-    
-    const card = getCardDetails(searchTerm);
-    if (!card) {
-        displayNoAccessResult(searchTerm);
-        return;
-    }
-    
-    if (card.loungeAccess) {
-        displayAccessResult(card);
-    } else {
-        displayNoAccessResult(card.name);
-    }
-}
-
-function displayAccessResult(card) {
-    if (!loungeResultArea) return;
-    
-    const domesticText = card.domesticVisits === "Unlimited" ? "Unlimited visits/year" : `${card.domesticVisits} visits/year`;
-    const domesticQuarter = card.domesticPerQuarter ? `(${card.domesticPerQuarter} per quarter)` : '';
-    const domesticSpend = card.domesticSpend ? `<div class="spend-note">💰 ${card.domesticSpend}</div>` : '';
-    const internationalText = card.internationalVisits === "Unlimited" ? "Unlimited visits/year" : card.internationalVisits === "0" ? "Not available" : `${card.internationalVisits} visits/year`;
-    const internationalSpend = card.internationalSpend ? `<div class="spend-note">💰 ${card.internationalSpend}</div>` : '';
-    
-    loungeResultArea.innerHTML = `
-        <div class="access-result-card">
-            <div class="access-result-header">
-                <div class="card-title-section">
-                    <div class="card-bank">${card.bank} Bank</div>
-                    <h3>${card.name} ${card.variant || ''}</h3>
-                </div>
-                <div class="access-status-badge">✅ Lounge Access Available</div>
-            </div>
-            <div class="access-details-grid">
-                <div class="access-detail-item">
-                    <span class="detail-label">✈ Domestic Lounges</span>
-                    <span class="detail-value">${domesticText}</span>
-                    <span class="detail-sub">${domesticQuarter}</span>
-                    ${domesticSpend}
-                </div>
-                <div class="access-detail-item">
-                    <span class="detail-label">🌍 International Lounges</span>
-                    <span class="detail-value">${internationalText}</span>
-                    ${card.network ? `<span class="detail-sub">Network: ${card.network}</span>` : ''}
-                    ${internationalSpend}
-                </div>
-            </div>
-        </div>
-    `;
-    loungeResultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-function displayNoAccessResult(cardName) {
-    if (!loungeResultArea) return;
-    loungeResultArea.innerHTML = `
-        <div class="no-access-card">
-            <div class="sad-emoji">😢</div>
-            <h4>Sorry, "${cardName}" doesn't have lounge access</h4>
-            <p>Don't worry! Many cards offer FREE lounge access with zero annual fees.</p>
-            <a href="lounge/cards.html" class="how-about-btn" style="display: inline-block; text-decoration: none;">
-                🔥 How about these 50+ cards with lounge access?
-            </a>
-        </div>
-    `;
-    loungeResultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-// Helper function to escape HTML
-function escapeHtml(str) {
-    return str.replace(/[&<>]/g, function(m) {
-        if (m === '&') return '&amp;';
-        if (m === '<') return '&lt;';
-        if (m === '>') return '&gt;';
-        return m;
-    });
-}
-
-console.log('✅ FareFlyers script loaded successfully');
-
+    console.log('✅ Lounge search loaded. Database size:', typeof LOUNGE_CARDS_DATABASE !== 'undefined' ? LOUNGE_CARDS_DATABASE.length : 0);
+});
 // ============================================================
 // AIRPORT DATA FOR SEARCH SUGGESTIONS
 // ============================================================
