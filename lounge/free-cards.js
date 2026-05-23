@@ -24,7 +24,7 @@ const cardsData = [
         forex: false,
         internationalLounge: true,
         network: "Priority Pass",
-        affiliateLink: "https://www.indusind.com/credit-cards/tiger?ref=fareflyers",
+        affiliateLink: "https://bitli.in/o0xMP9e",
         note: "Best LTF with international access"
     },
     {
@@ -40,7 +40,7 @@ const cardsData = [
         forex: true,
         internationalLounge: false,
         network: "Bank Program",
-        affiliateLink: "https://www.scapia.com/?ref=fareflyers",
+        affiliateLink: "https://bitli.in/YO9Nnh5",
         note: "Zero forex markup, ₹10K spend for lounge"
     },
     {
@@ -120,7 +120,7 @@ const cardsData = [
         forex: true,
         internationalLounge: true,
         network: "Priority Pass",
-        affiliateLink: "https://www.rblbank.com/world-safari?ref=fareflyers",
+        affiliateLink: "https://bitli.in/d4UB3GM",
         note: "Zero forex markup"
     },
 
@@ -202,7 +202,7 @@ const cardsData = [
         forex: false,
         internationalLounge: true,
         network: "Priority Pass",
-        affiliateLink: "https://application.axisbank.co.in/magnus?ref=fareflyers",
+        affiliateLink: "https://bitli.in/YeYoF2T",
         note: "Intl unconditional, 4 guest visits/year"
     },
     {
@@ -234,7 +234,7 @@ const cardsData = [
         forex: false,
         internationalLounge: true,
         network: "Priority Pass",
-        affiliateLink: "https://www.sbicard.com/elite?ref=fareflyers",
+        affiliateLink: "https://bitli.in/9rjwEqg",
         note: "Best no-condition mid-range card"
     },
     {
@@ -298,7 +298,7 @@ const cardsData = [
         forex: false,
         internationalLounge: true,
         network: "Priority Pass",
-        affiliateLink: "https://www.aubank.in/zenith?ref=fareflyers",
+        affiliateLink: "https://bitli.in/wr7JhnM",
         note: "Strong lounge benefit from AU Bank"
     },
 
@@ -316,7 +316,7 @@ const cardsData = [
         forex: false,
         internationalLounge: true,
         network: "Priority Pass",
-        affiliateLink: "https://apply.hdfcbank.com/regalia-gold?ref=fareflyers",
+        affiliateLink: "https://bitli.in/VfdNTz8",
         note: "Strong international access"
     },
     {
@@ -332,7 +332,7 @@ const cardsData = [
         forex: false,
         internationalLounge: false,
         network: "DreamFolks",
-        affiliateLink: "https://apply.hdfcbank.com/millennia?ref=fareflyers",
+        affiliateLink: "https://bitli.in/2Ifmqli",
         note: "Cashback card"
     },
     {
@@ -380,7 +380,7 @@ const cardsData = [
         forex: false,
         internationalLounge: false,
         network: "DreamFolks",
-        affiliateLink: "https://application.axisbank.co.in/axisprivilege?ref=fareflyers",
+        affiliateLink: "https://bitli.in/7D3OtaD",
         note: "Unconditional domestic access"
     },
     {
@@ -412,7 +412,7 @@ const cardsData = [
         forex: false,
         internationalLounge: true,
         network: "Priority Pass",
-        affiliateLink: "https://www.sbicard.com/prime?ref=fareflyers",
+        affiliateLink: "https://bitli.in/VCPoomB",
         note: "Unconditional lounge access"
     },
     {
@@ -492,7 +492,7 @@ const cardsData = [
         forex: false,
         internationalLounge: false,
         network: "DreamFolks",
-        affiliateLink: "https://www.bobcard.co.in/eterna?ref=fareflyers",
+        affiliateLink: "https://bitli.in/m8725qP",
         note: "Good rewards rate"
     },
     {
