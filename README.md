@@ -41,7 +41,7 @@
 | Hosting | Vercel / Netlify |
 
 ## 📁 Project Structure
-
+```bash
 fareflyers/
 ├── index.html              # Main homepage
 ├── style.css               # Main stylesheet
