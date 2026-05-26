@@ -42,7 +42,7 @@
 
 ## 📁 Project Structure
 
-```
+`
 fareflyers/
 ├── index.html              # Main homepage
 ├── style.css               # Main stylesheet
